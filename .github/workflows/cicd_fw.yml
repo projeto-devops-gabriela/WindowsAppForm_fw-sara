@@ -25,7 +25,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: app/src
           args: >
             -Dsonar.organization='migracao-net' # For SonarQube Cloud only
             -Dsonar.projectKey= ${{ github.repository }} # Usa o nome do repositório como project key
