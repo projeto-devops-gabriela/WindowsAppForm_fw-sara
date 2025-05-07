@@ -37,10 +37,10 @@ jobs:
           choco install visualstudio2019-workload-vctest -y
 
       - name: Run Tests
-        uses: microsoft/vstest-action@v1.0.0
-        with:
-          searchFolder: '**/bin/Release'
-          testAssembly: '**/*.Tests.dll'
+        run: |
+          nuget restore
+          msbuild /p:Configuration=Release
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\TestPlatform\vstest.console.exe" **\bin\Release\*.Tests.dll
 
       # - name: Save Build Artifacts
       #   uses: actions/upload-artifact@v3
