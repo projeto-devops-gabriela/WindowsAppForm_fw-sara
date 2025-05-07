@@ -30,3 +30,9 @@ jobs:
             -Dsonar.projectKey=WindowsAppForm_fw
             -Dsonar.verbose=true
             -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*
+      
+      - name: Run Tests
+        run: |
+          nuget restore
+          msbuild /p:Configuration=Release
+          vstest.console.exe **\bin\Release\*.Tests.dll
