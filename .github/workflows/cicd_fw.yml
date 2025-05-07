@@ -31,10 +31,16 @@ jobs:
             -Dsonar.verbose=true
             -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*
       
+      - name: Install Test Platform
+        run: |
+          choco install microsoft-build-tools -y
+          choco install visualstudio2019-workload-vctest -y
+
       - name: Run Tests
-        uses: microsoft/vstest-action@v1
+        uses: microsoft/vstest-action@v1.0.0
         with:
-          testAssembly: '**/bin/Release/*.Tests.dll'
+          searchFolder: '**/bin/Release'
+          testAssembly: '**/*.Tests.dll'
 
       # - name: Save Build Artifacts
       #   uses: actions/upload-artifact@v3
