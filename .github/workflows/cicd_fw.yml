@@ -24,4 +24,6 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: ${{ github.repository }} # Usa o nome do repositório como project key
+          SONAR_ORGANIZATION: 'Migracao-NET' # Organização configurada como segredo
           args: '-Dsonar.verbose=true -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*,**/*.sln,**/*.csproj,**/*.config,**/*.json,**/*.xml,**/*.md,**/*.yml,**/*.yaml,**/*.txt' # Exclude unnecessary files from analysis
