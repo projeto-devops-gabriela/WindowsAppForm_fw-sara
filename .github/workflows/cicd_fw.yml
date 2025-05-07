@@ -20,10 +20,18 @@ jobs:
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v2
 
-      - name: SonarSourceCode Scanner
-        uses: SonarSource/sonarcloud-github-action@v5
+      - name: Official SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5.2.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: ${{ github.repository }} # Usa o nome do repositório como project key
-          SONAR_ORGANIZATION: 'Migracao-NET' # Organização configurada como segredo
+          projectKey: ${{ github.repository }} # Usa o nome do repositório como project key
           args: '-Dsonar.verbose=true -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*,**/*.sln,**/*.csproj,**/*.config,**/*.json,**/*.xml,**/*.md,**/*.yml,**/*.yaml,**/*.txt' # Exclude unnecessary files from analysis
+        
+
+      # - name: SonarSourceCode Scanner
+      #   uses: SonarSource/sonarcloud-github-action@v5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #     SONAR_PROJECT_KEY: ${{ github.repository }} # Usa o nome do repositório como project key
+      #     SONAR_ORGANIZATION: 'Migracao-NET' # Organização configurada como segredo
+      #     args: '-Dsonar.verbose=true -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*,**/*.sln,**/*.csproj,**/*.config,**/*.json,**/*.xml,**/*.md,**/*.yml,**/*.yaml,**/*.txt' # Exclude unnecessary files from analysis
