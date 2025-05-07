@@ -31,11 +31,6 @@ jobs:
             -Dsonar.verbose=true
             -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*
       
-      - name: Install Test Platform
-        run: |
-          choco install microsoft-build-tools -y
-          choco install visualstudio2019-workload-vctest -y
-
       - name: Run Tests
         run: |
           nuget restore
@@ -46,4 +41,4 @@ jobs:
       #   uses: actions/upload-artifact@v3
       #   with:
       #     name: build-artifacts
-      #     path: **/bin/Release/
+      #     path: '**/bin/Release/'
