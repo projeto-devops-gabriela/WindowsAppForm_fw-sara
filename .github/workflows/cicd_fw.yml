@@ -41,11 +41,11 @@ jobs:
           }
         shell: pwsh
 
-      # - name: Save Build Artifacts
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: build-artifacts
-      #     path: '**/bin/Release/'
+      - name: Save Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: '**/bin/Release/'
 
   # deploy:
   #   needs: build
