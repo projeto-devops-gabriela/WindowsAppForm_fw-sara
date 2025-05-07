@@ -27,7 +27,7 @@ jobs:
         with:
           args: >
             -Dsonar.organization='migracao-net' # For SonarQube Cloud only
-            -Dsonar.projectKey= ${{ github.repository }} # Usa o nome do repositório como project key
+            -Dsonar.projectKey=${{ github.repository }} # Usa o nome do repositório como project key
             # sonar.projectKey: ${{ github.repository }} # Usa o nome do repositório como project key
             # sonar.organization: 'Migracao-NET'
             # args: '-Dsonar.verbose=true -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*,**/*.sln,**/*.csproj,**/*.config,**/*.json,**/*.xml,**/*.md,**/*.yml,**/*.yaml,**/*.txt' # Exclude unnecessary files from analysis
