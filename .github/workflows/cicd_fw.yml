@@ -20,7 +20,8 @@ jobs:
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v2
 
-      - name: SonarCloud
-        uses: sonarsource/sonarcloud-github-action@v5
-        with:
-          sonarcloud-token: ${{ secrets.SONAR_TOKEN }}
+      - name: SonarSourceCode Scanner
+        uses: SonarSource/sonarcloud-github-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          args: '-Dsonar.verbose=true -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*,**/*.sln,**/*.csproj,**/*.config,**/*.json,**/*.xml,**/*.md,**/*.yml,**/*.yaml,**/*.txt' # Exclude unnecessary files from analysis
