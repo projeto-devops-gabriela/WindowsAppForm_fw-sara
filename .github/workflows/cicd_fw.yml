@@ -27,6 +27,6 @@ jobs:
         with:
           args: >
             -Dsonar.organization=migracao-net
-            -Dsonar.projectKey=WindowsAppForm_fw
+            -Dsonar.projectKey=Migracao-NET_WindowsAppForm_fw
             -Dsonar.verbose=true
             -Dsonar.exclusions=**/bin/**/*,**/obj/**/*,**/packages/**/*,**/test/**/*
