@@ -8,7 +8,8 @@ on:
 
 jobs:
   use-reusable-workflow:
-    uses: Migracao-NET/sara_pipelines_templates/.github/workflows/ci_dotnetfw.yml@main
+    uses: sarafogo/pipeline_templates/.github/workflows/build.yml@main
+    secrets: inherit
 
 
 # name: CI_CD_FW
