@@ -5,16 +5,13 @@ on:
     branches:
       - main
   workflow_dispatch:
-    inputs:
-      enableSonar:
-        type: boolean
-        description: "Habilitar etapa do Sonar"
-        required: false
-        default: false
 
 jobs:
   use-reusable-workflow:
     uses: sarafogo/pipeline_templates/.github/workflows/build.yml@main
-    with:
-      enableSonar: ${{ github.event.inputs.enableSonar }}
+    secrets: inherit
+
+  build:
+    needs: use-reusable-workflow
+    uses: sarafogo/pipeline_templates/.github/workflows/deploy_lib.yml@main
     secrets: inherit
