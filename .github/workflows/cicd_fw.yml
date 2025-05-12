@@ -16,5 +16,5 @@ jobs:
 
   build:
     needs: use-reusable-workflow
-    uses: sarafogo/pipeline_templates/.github/workflows/deploy_lib.yml@main
+    uses: sarafogo/pipeline_templates/.github/workflows/deploy_app.yml@main
     secrets: inherit
