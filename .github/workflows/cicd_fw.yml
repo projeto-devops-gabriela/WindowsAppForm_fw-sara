@@ -13,7 +13,7 @@ jobs:
   use-reusable-workflow:
     uses: sarafogo/pipeline_templates/.github/workflows/build.yml@main
     with:
-      enableSonar: 'false'
+      enableSonar: 'true'
     secrets: inherit
 
   # deploy:
