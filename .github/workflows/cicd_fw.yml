@@ -14,7 +14,6 @@ jobs:
     uses: sarafogo/pipeline_templates/.github/workflows/build.yml@main
     with:
       enableSonar: 'false'
-      artifacts-type: 'app'
     secrets: inherit
 
   # deploy:
