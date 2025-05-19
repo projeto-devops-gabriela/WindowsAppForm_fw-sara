@@ -11,10 +11,10 @@ permissions:
 
 jobs:
   use-reusable-workflow:
-    uses: SampleProjectDotNet/reusable-workflows/.github/workflows/dotnet-build-test.yml@main
+    uses: MigracaoDotNetForms/ci-cd-pipelines/.github/workflows/reusable-build.yml@main
     secrets: inherit
 
   deploy:
     needs: use-reusable-workflow
-    uses: SampleProjectDotNet/reusable-workflows/.github/workflows/publish-to-file-server.yml@main
+    uses: MigracaoDotNetForms/ci-cd-pipelines/blob/main/.github/workflows/release-deploy.yml@main
     secrets: inherit
