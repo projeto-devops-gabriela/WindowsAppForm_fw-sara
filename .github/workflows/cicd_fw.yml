@@ -12,9 +12,13 @@ permissions:
 jobs:
   use-reusable-workflow:
     uses: MigracaoDotNetForms/ci-cd-pipelines/.github/workflows/reusable-build.yml@main
-    secrets: inherit
+    with:
+      build_configuration: Release
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    
 
   deploy:
     needs: use-reusable-workflow
-    uses: MigracaoDotNetForms/ci-cd-pipelines/blob/main/.github/workflows/release-deploy.yml@main
-    secrets: inherit
+    uses: MigracaoDotNetForms/ci-cd-pipelines/.github/workflows/release-deploy.yml@main
+    # secrets: inherit
