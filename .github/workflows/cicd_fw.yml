@@ -11,14 +11,13 @@ permissions:
 
 jobs:
   use-reusable-workflow:
-    uses: MigracaoDotNetForms/ci-cd-pipelines/.github/workflows/reusable-build.yml@main
+    uses: Gabriela-M-Silva/Esteiras-Devops/.github/workflows/esteira-teste-conexao.yaml@main
     with:
-      build_configuration: Release
-    secrets:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      project-directory: src/WindowsFormsApp_fw
+      project-type: WindowsFormsApp
+      build-configuration: Release
     
-
-  deploy:
-    needs: use-reusable-workflow
-    uses: MigracaoDotNetForms/ci-cd-pipelines/.github/workflows/release-deploy.yml@main
+  # deploy:
+  #   needs: use-reusable-workflow
+  #   uses: MigracaoDotNetForms/ci-cd-pipelines/.github/workflows/release-deploy.yml@main
     # secrets: inherit
