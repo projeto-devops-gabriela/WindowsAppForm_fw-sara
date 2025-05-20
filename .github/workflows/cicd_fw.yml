@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   use-reusable-workflow:
-    uses: Gabriela-M-Silva/Esteiras-Devops/.github/workflows/esteira-teste-conexao.yaml@main
+    uses: projeto-devops-gabriela/esteiras-devops/.github/workflows/esteira-teste-conexao.yaml@main
     with:
       project-directory: src/WindowsFormsApp_fw
       project-type: WindowsFormsApp
