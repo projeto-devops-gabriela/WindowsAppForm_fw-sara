@@ -13,7 +13,6 @@ jobs:
   use-reusable-workflow:
     uses: projeto-devops-gabriela/esteiras-devops/.github/workflows/esteira-teste-conexao.yaml@main
     with:
-      project-directory: src/WindowsFormsApp_fw
       project-type: WindowsFormsApp
       build-configuration: Release
     secrets: inherit
