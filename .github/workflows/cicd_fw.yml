@@ -16,6 +16,7 @@ jobs:
       project-directory: src/WindowsFormsApp_fw
       project-type: WindowsFormsApp
       build-configuration: Release
+    secrets: inherit
     
   # deploy:
   #   needs: use-reusable-workflow
